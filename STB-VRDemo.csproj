@@ -139,6 +139,36 @@
     <Compile Include="Assets\Scripts\OVRRayPointerEventData.cs" />
     <Compile Include="Assets\Scripts\OVRRaycaster.cs" />
     <Compile Include="Assets\Scripts\ParticleGazeCursor.cs" />
+    <Compile Include="Assets\ZestKit\Collections\TweenChain.cs" />
+    <Compile Include="Assets\ZestKit\Collections\TweenParty.cs" />
+    <Compile Include="Assets\ZestKit\Easing\EaseType.cs" />
+    <Compile Include="Assets\ZestKit\Easing\Easing.cs" />
+    <Compile Include="Assets\ZestKit\Easing\Zest.cs" />
+    <Compile Include="Assets\ZestKit\Other Goodies\ActionTask.cs" />
+    <Compile Include="Assets\ZestKit\Other Goodies\CameraShakeTween.cs" />
+    <Compile Include="Assets\ZestKit\Other Goodies\QuickCache.cs" />
+    <Compile Include="Assets\ZestKit\Other Goodies\SmoothedValues.cs" />
+    <Compile Include="Assets\ZestKit\Other Goodies\TransformSpringTween.cs" />
+    <Compile Include="Assets\ZestKit\Splines\AbstractSplineSolver.cs" />
+    <Compile Include="Assets\ZestKit\Splines\BezierSplineSolver.cs" />
+    <Compile Include="Assets\ZestKit\Splines\CatmullRomSplineSolver.cs" />
+    <Compile Include="Assets\ZestKit\Splines\CubicBezierSplineSolver.cs" />
+    <Compile Include="Assets\ZestKit\Splines\DummySpline.cs" />
+    <Compile Include="Assets\ZestKit\Splines\QuadraticBezierSplineSolver.cs" />
+    <Compile Include="Assets\ZestKit\Splines\Spline.cs" />
+    <Compile Include="Assets\ZestKit\Splines\SplineAssetUtils.cs" />
+    <Compile Include="Assets\ZestKit\Splines\SplineTween.cs" />
+    <Compile Include="Assets\ZestKit\Splines\StraightLineSplineSolver.cs" />
+    <Compile Include="Assets\ZestKit\TweenTargets\AbstractTweenTarget.cs" />
+    <Compile Include="Assets\ZestKit\TweenTargets\TransformVector3Tween.cs" />
+    <Compile Include="Assets\ZestKit\TweenTargets\TweenTargets.cs" />
+    <Compile Include="Assets\ZestKit\Tweens\AbstractTweenable.cs" />
+    <Compile Include="Assets\ZestKit\Tweens\ITween.cs" />
+    <Compile Include="Assets\ZestKit\Tweens\PropertyTweens.cs" />
+    <Compile Include="Assets\ZestKit\Tweens\Tween.cs" />
+    <Compile Include="Assets\ZestKit\Tweens\Tweens.cs" />
+    <Compile Include="Assets\ZestKit\ZestKit.cs" />
+    <Compile Include="Assets\ZestKit\ZestKitExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Background-FullScreen.shader" />

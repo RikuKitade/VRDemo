@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Prime31.ZestKit;
 
 public class Navigation : MonoBehaviour {
 
@@ -52,6 +53,8 @@ public class Navigation : MonoBehaviour {
         foreach (Transform child in md)
         {
             child.gameObject.SetActive(true);
+            ITween<float> alphaTween = child.GetComponentInChildren<Image>().ZKalphaTo(1, 0.3f);
+            alphaTween.start();
         }
         Transform back = GameObject.Find("Back").transform;
         back.GetChild(0).gameObject.SetActive(true);
@@ -62,7 +65,12 @@ public class Navigation : MonoBehaviour {
         Transform md = GameObject.Find("Main Display").transform;
         foreach (Transform child in md)
         {
-            child.gameObject.SetActive(false);
+            ITween<float> alphaTween = child.GetComponentInChildren<Image>().ZKalphaTo(0, 0.3f)
+            .setCompletionHandler(tween =>
+            {
+                child.gameObject.SetActive(false);
+            });
+            alphaTween.start();
         }
         Transform back = GameObject.Find("Back").transform;
         back.GetChild(0).gameObject.SetActive(false);
@@ -70,12 +78,19 @@ public class Navigation : MonoBehaviour {
 
     void DisablePanel(Transform t)
     {
-        t.gameObject.SetActive(false);
+        ITween<float> alphaTween = t.GetComponent<Image>().ZKalphaTo(0, 0.3f)
+            .setCompletionHandler(tween =>
+           {
+               t.gameObject.SetActive(false);
+           });
+        alphaTween.start();
     }
 
     void EnablePanel(Transform t)
     {
         t.gameObject.SetActive(true);
+        ITween<float> alphaTween = t.GetComponent<Image>().ZKalphaTo(1, 0.3f);
+        alphaTween.start();
     }
 
     void LoadContent(string project)
