@@ -79,8 +79,29 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AVProVideo\Scripts\Components\ApplyToMaterial.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Components\ApplyToMesh.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Components\AudioOutput.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Components\CubemapCube.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Components\DisplayBackground.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Components\DisplayIMGUI.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Components\DisplayUGUI.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Components\MediaPlayer.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Components\Support\ApplyToTextureWidgetNGUI.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Components\Support\WaitFinished.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Components\UpdateStereoMaterial.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Internal\AndroidMediaPlayer.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Internal\BaseMediaPlayer.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Internal\Interfaces.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Internal\NullMediaPlayer.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Internal\OSXMediaPlayer.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Internal\WebGLMediaPlayer.cs" />
+    <Compile Include="Assets\AVProVideo\Scripts\Internal\WindowsMediaPlayer.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRBoundary.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
@@ -120,10 +141,24 @@
     <Compile Include="Assets\Scripts\ParticleGazeCursor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Background-FullScreen.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Background-FullScreenTransparent.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-IMGUI-Transparent.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Lit-Diffuse.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-UI-Default-Stereo.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-UI-Default-Transparent.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Unlit-AndroidOES.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Unlit-Transparent.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Unlit.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-AndroidOES.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-Transparent.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere.shader" />
+    <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo.cginc" />
     <None Include="Assets\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
     <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
     <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
     <None Include="Assets\OVR\Shaders\Unlit Crosshair.shader" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Shaders\Mobile-Particle-Alpha-AfterTrans.shader" />
     <None Include="Assets\Shaders\Particle Alpha Blend-AfterTrans.shader" />
     <None Include="Assets\Shaders\Particle-Alpha-Premultiply-AfterTrans.shader" />
