@@ -109,6 +109,7 @@
     <Compile Include="Assets\OVR\Scripts\Util\OVRSceneSampleController.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRWaitCursor.cs" />
+    <Compile Include="Assets\Scripts\Main\ContentLoader.cs" />
     <Compile Include="Assets\Scripts\Main\Navigation.cs" />
     <Compile Include="Assets\Scripts\OVRGazePointer.cs" />
     <Compile Include="Assets\Scripts\OVRInputModule.cs" />

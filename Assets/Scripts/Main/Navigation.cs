@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class Navigation : MonoBehaviour {
 
@@ -46,6 +47,7 @@ public class Navigation : MonoBehaviour {
 
     void EnableMainDisplay()
     {
+        LoadContent(name);
         Transform md = GameObject.Find("Main Display").transform;
         foreach (Transform child in md)
         {
@@ -70,6 +72,23 @@ public class Navigation : MonoBehaviour {
     void EnablePanel(Transform t)
     {
         t.gameObject.SetActive(true);
+    }
+
+    void LoadContent(string project)
+    {
+        
+        ContentLoader cl = GameObject.Find("OVRCameraRig").GetComponent<ContentLoader>();
+
+        GameObject mainPanel = GameObject.Find("Main Display").transform.GetChild(0).GetChild(0).gameObject;
+        mainPanel.GetComponent<Image>().overrideSprite = cl.mainImages[project];
+
+        GameObject leftPanel = GameObject.Find("Main Display").transform.GetChild(1).GetChild(0).gameObject;
+        leftPanel.GetComponent<Image>().overrideSprite = cl.leftImages[project];
+
+        GameObject rightPanel = GameObject.Find("Main Display").transform.GetChild(2).GetChild(0).gameObject;
+        rightPanel.GetComponent<Image>().overrideSprite = cl.rightImages[project];
+
+
     }
 
 }
