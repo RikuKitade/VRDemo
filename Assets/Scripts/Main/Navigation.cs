@@ -105,7 +105,7 @@ public class Navigation : MonoBehaviour {
     void LoadContent(string project)
     {
         
-        ContentLoader cl = GameObject.Find("OVRCameraRig").GetComponent<ContentLoader>();
+        ContentLoader cl = GameObject.Find("[SteamVR]").GetComponent<ContentLoader>();
 
         GameObject mainPanel = GameObject.Find("Main Display").transform.GetChild(0).GetChild(0).gameObject;
         mainPanel.GetComponent<Image>().overrideSprite = cl.mainImages[project];
