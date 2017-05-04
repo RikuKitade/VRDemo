@@ -30,6 +30,7 @@ public class Navigation : MonoBehaviour {
                 DisablePanel(panel);
             }
         }
+        DisableVideo();
         EnableMainDisplay();
     }
 
@@ -44,6 +45,7 @@ public class Navigation : MonoBehaviour {
                 EnablePanel(panel);
             }
         }
+        EnableVideo();
     }
 
     void EnableMainDisplay()
@@ -53,11 +55,13 @@ public class Navigation : MonoBehaviour {
         foreach (Transform child in md)
         {
             child.gameObject.SetActive(true);
-            ITween<float> alphaTween = child.GetComponentInChildren<Image>().ZKalphaTo(1, 0.3f);
+            ITween<float> alphaTween = child.GetComponentInChildren<Image>().ZKalphaTo(1, 0.3f).setEaseType(EaseType.Linear);
             alphaTween.start();
         }
         Transform back = GameObject.Find("Back").transform;
         back.GetChild(0).gameObject.SetActive(true);
+        ITween<float> backTween = back.GetComponentInChildren<Image>().ZKalphaTo(1, 0.3f).setEaseType(EaseType.Linear);
+        backTween.start();
     }
 
     void DisableMainDisplay()
@@ -65,7 +69,7 @@ public class Navigation : MonoBehaviour {
         Transform md = GameObject.Find("Main Display").transform;
         foreach (Transform child in md)
         {
-            ITween<float> alphaTween = child.GetComponentInChildren<Image>().ZKalphaTo(0, 0.3f)
+            ITween<float> alphaTween = child.GetComponentInChildren<Image>().ZKalphaTo(0, 0.3f).setEaseType(EaseType.Linear)
             .setCompletionHandler(tween =>
             {
                 child.gameObject.SetActive(false);
@@ -73,12 +77,17 @@ public class Navigation : MonoBehaviour {
             alphaTween.start();
         }
         Transform back = GameObject.Find("Back").transform;
-        back.GetChild(0).gameObject.SetActive(false);
+        ITween<float> backTween = back.GetComponentInChildren<Image>().ZKalphaTo(0, 0.3f).setEaseType(EaseType.Linear)
+            .setCompletionHandler(tween =>
+            {
+                back.GetChild(0).gameObject.SetActive(false);
+            });
+        backTween.start();
     }
 
     void DisablePanel(Transform t)
     {
-        ITween<float> alphaTween = t.GetComponent<Image>().ZKalphaTo(0, 0.3f)
+        ITween<float> alphaTween = t.GetComponent<Image>().ZKalphaTo(0, 0.3f).setEaseType(EaseType.Linear)
             .setCompletionHandler(tween =>
            {
                t.gameObject.SetActive(false);
@@ -89,7 +98,7 @@ public class Navigation : MonoBehaviour {
     void EnablePanel(Transform t)
     {
         t.gameObject.SetActive(true);
-        ITween<float> alphaTween = t.GetComponent<Image>().ZKalphaTo(1, 0.3f);
+        ITween<float> alphaTween = t.GetComponent<Image>().ZKalphaTo(1, 0.3f).setEaseType(EaseType.Linear);
         alphaTween.start();
     }
 
@@ -119,6 +128,18 @@ public class Navigation : MonoBehaviour {
         GameObject right3Panel = GameObject.Find("Main Display").transform.GetChild(6).GetChild(0).gameObject;
         right3Panel.GetComponent<Image>().overrideSprite = cl.right3images[project];
 
+    }
+
+    void EnableVideo()
+    {
+        Transform vidpanel = GameObject.Find("VidPanel").transform;
+        vidpanel.GetChild(0).gameObject.SetActive(true);
+    }
+
+    void DisableVideo()
+    {
+        Transform vidpanel = GameObject.Find("VidPanel").transform;
+        vidpanel.GetChild(0).gameObject.SetActive(false);
     }
 
 }
